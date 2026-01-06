@@ -1,0 +1,97 @@
+/* Modern Right-Slide Navigation Menu for uCRM */
+
+/* Move toggle button to right */
+.navbar-toggle {
+    float: right !important;
+    margin-left: 15px;
+    order: 999;
+}
+
+/* Modern slide-in menu container */
+.mobile-slide-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background: #1a1a1a;
+    z-index: 99999;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+
+.mobile-slide-menu.active {
+    transform: translateX(0);
+}
+
+/* Overlay background */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 99998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menu styling */
+.mobile-slide-menu .mobile_menu {
+    position: static;
+    width: 100%;
+    padding: 20px 0;
+    background: transparent;
+    transform: none;
+}
+
+/* Show cloned menu - override Bootstrap dropdown-menu */
+.mobile-slide-menu .dropdown-menu {
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    max-height: none !important;
+    height: auto !important;
+}
+
+.mobile-slide-menu .mobile_menu li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-slide-menu .mobile_menu li a {
+    color: #fff;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.2s;
+}
+
+.mobile-slide-menu .mobile_menu li a:hover {
+    background: rgba(204, 153, 51, 0.2);
+}
+
+/* Close button */
+.mobile-menu-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Hide old dropdown */
+.navbar-header .dropdown-menu.mobile_menu {
+    display: none !important;
+}
