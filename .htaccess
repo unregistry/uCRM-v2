@@ -38,9 +38,8 @@ RedirectMatch 403 (?i)/+files\.md5$
     RewriteCond %{THE_REQUEST} \s/agent/dashboard/index.php\?module=Users&action=Login [NC]
     RewriteRule ^ /agent/dashboard/? [R=301,L]
 
-    # Redirect ugly logout URL to root
-    RewriteCond %{THE_REQUEST} \s/agent/dashboard/index.php\?module=Users&action=Logout [NC]
-    RewriteRule ^ /agent/dashboard/? [R=301,L]
+    # NOTE: Logout action must execute to destroy session, so don't redirect it
+    # SuiteCRM's Logout.php handles the redirect after logout
 
     # Redirect ugly home URL to root
     RewriteCond %{THE_REQUEST} \s/agent/dashboard/index.php\?module=Home&action=index [NC]
