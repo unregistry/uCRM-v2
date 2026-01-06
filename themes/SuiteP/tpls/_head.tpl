@@ -100,6 +100,10 @@
     {/literal}
     {$SUGAR_CSS}
     <link rel="stylesheet" type="text/css" href="themes/SuiteP/css/colourSelector.php">
+    <!-- www.onl: Custom branding -->
+    <link rel="stylesheet" href="/css/style.css?v=20250101-5">
+    <link rel="stylesheet" href="/agent/dashboard/custom/css/login-header-rebrand.css">
+    <link rel="stylesheet" href="/agent/dashboard/custom/css/onl-branding.css">
     <script type="text/javascript" src='{sugar_getjspath file="themes/SuiteP/js/jscolor.js"}'></script>
     <script type="text/javascript" src='{sugar_getjspath file="cache/include/javascript/sugar_field_grp.js"}'></script>
     <script type="text/javascript" src='{sugar_getjspath file="vendor/tinymce/tinymce/tinymce.min.js"}'></script>
