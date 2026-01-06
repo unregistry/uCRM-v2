@@ -1,6 +1,6 @@
 /**
  * www.onl Login Page Navigation
- * Mobile menu functionality for the login page
+ * Mobile menu and theme toggle functionality for the login page
  */
 
 (function() {
@@ -15,16 +15,26 @@
 
     function initLoginNavigation() {
         // Select elements
-        const navToggle = document.querySelector('.onl-nav-toggle');
-        const mobileMenu = document.querySelector('.onl-mobile-menu');
-        const mobileOverlay = document.querySelector('.onl-mobile-overlay');
-        const mobileLinks = document.querySelectorAll('.onl-mobile-link');
+        const navToggle = document.querySelector('.nav-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const themeToggle = document.querySelector('.theme-toggle');
 
         // Mobile menu toggle functionality
         if (navToggle) {
             navToggle.addEventListener('click', function(e) {
                 e.preventDefault();
+                e.stopPropagation();
                 toggleMobileMenu();
+            });
+        }
+
+        // Theme toggle functionality
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleTheme();
             });
         }
 
@@ -49,6 +59,13 @@
             }
         });
 
+        // Update copyright year
+        const yearElements = document.querySelectorAll('#current-year');
+        const currentYear = new Date().getFullYear();
+        yearElements.forEach(function(el) {
+            el.textContent = currentYear;
+        });
+
         /**
          * Toggle mobile menu open/closed
          */
@@ -60,7 +77,11 @@
 
             // Toggle overlay
             if (mobileOverlay) {
-                mobileOverlay.classList.toggle('active', isActive);
+                if (isActive) {
+                    mobileOverlay.style.display = 'block';
+                } else {
+                    mobileOverlay.style.display = 'none';
+                }
             }
 
             // Animate hamburger menu
@@ -94,7 +115,7 @@
 
             // Close overlay
             if (mobileOverlay) {
-                mobileOverlay.classList.remove('active');
+                mobileOverlay.style.display = 'none';
             }
 
             // Reset hamburger animation
@@ -108,5 +129,82 @@
             // Restore body scroll
             document.body.style.overflow = '';
         }
+
+        /**
+         * Toggle theme between light and dark
+         */
+        function toggleTheme() {
+            const html = document.documentElement;
+            const body = document.body;
+            const currentTheme = html.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            // Update theme
+            html.setAttribute('data-theme', newTheme);
+            body.setAttribute('data-theme', newTheme);
+
+            // Save to localStorage
+            try {
+                localStorage.setItem('theme', newTheme);
+            } catch (e) {
+                // localStorage not available
+            }
+
+            // Update theme icon visibility
+            const sunIcon = themeToggle.querySelector('.sun-icon');
+            const moonIcon = themeToggle.querySelector('.moon-icon');
+
+            if (sunIcon && moonIcon) {
+                if (newTheme === 'dark') {
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'block';
+                } else {
+                    sunIcon.style.display = 'block';
+                    moonIcon.style.display = 'none';
+                }
+            }
+        }
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const html = document.documentElement;
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+
+            let savedTheme = 'light';
+
+            // Check localStorage first
+            try {
+                savedTheme = localStorage.getItem('theme') || 'light';
+            } catch (e) {
+                // localStorage not available, use system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    savedTheme = 'dark';
+                }
+            }
+
+            // Apply theme
+            html.setAttribute('data-theme', savedTheme);
+            body.setAttribute('data-theme', savedTheme);
+
+            // Update theme icon visibility
+            if (themeToggle) {
+                const sunIcon = themeToggle.querySelector('.sun-icon');
+                const moonIcon = themeToggle.querySelector('.moon-icon');
+
+                if (sunIcon && moonIcon) {
+                    if (savedTheme === 'dark') {
+                        sunIcon.style.display = 'none';
+                        moonIcon.style.display = 'block';
+                    } else {
+                        sunIcon.style.display = 'block';
+                        moonIcon.style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        // Initialize theme on page load
+        initTheme();
     }
 })();

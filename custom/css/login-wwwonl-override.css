@@ -1,0 +1,379 @@
+/* =============================================================================
+   www.onl Login Page CSS Override
+   Overrides SuiteCRM styles to display www.onl navbar and footer correctly
+   Loads AFTER all SuiteCRM CSS to ensure specificity
+   ========================================================================== */
+
+/* ==========================================================================
+   GLOBAL RESETS FOR LOGIN PAGE
+   ========================================================================== */
+.p_login {
+    background: transparent !important;
+    min-height: 100vh;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.p_login_middle {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Hide SuiteCRM branding */
+.p_login_top,
+.p_login_bottom {
+    display: none !important;
+}
+
+/* ==========================================================================
+   WWW.ONL NAVBAR
+   ========================================================================== */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    padding: 20px 0 !important;
+    background: transparent !important;
+    transition: all 0.3s ease !important;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.nav-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.nav-brand {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.nav-brand a {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+}
+
+.logo {
+    height: 40px !important;
+    width: auto !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.logo-dark {
+    display: block !important;
+}
+
+.logo-light {
+    display: none !important;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: none !important;
+}
+
+[data-theme="dark"] .logo-light {
+    display: block !important;
+}
+
+.nav-menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: 30px !important;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+}
+
+.nav-link:hover {
+    color: #cc9933 !important;
+}
+
+.nav-link::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -4px !important;
+    left: 0 !important;
+    width: 0 !important;
+    height: 2px !important;
+    background: #cc9933 !important;
+    transition: width 0.3s ease !important;
+}
+
+.nav-link:hover::after {
+    width: 100% !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.theme-toggle:hover {
+    background: rgba(204, 153, 51, 0.2) !important;
+    border-color: #cc9933 !important;
+}
+
+.theme-icon {
+    color: #ffffff !important;
+}
+
+/* Mobile Menu Toggle */
+.nav-toggle {
+    display: none !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+.nav-toggle span {
+    width: 25px !important;
+    height: 2px !important;
+    background: #ffffff !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Mobile Menu */
+.mobile-menu-overlay {
+    display: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 998 !important;
+}
+
+.mobile-menu {
+    display: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: -300px !important;
+    width: 300px !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    z-index: 999 !important;
+    padding: 80px 30px 30px !important;
+    transition: right 0.3s ease !important;
+}
+
+.mobile-menu.active {
+    right: 0 !important;
+}
+
+.mobile-menu-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+}
+
+.mobile-link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 18px !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ==========================================================================
+   WWW.ONL FOOTER
+   ========================================================================== */
+.footer {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-top: 1px solid rgba(204, 153, 51, 0.3) !important;
+    padding: 40px 0 20px !important;
+    margin-top: auto !important;
+}
+
+.container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+.footer-content-new {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+}
+
+.footer-line {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 15px !important;
+}
+
+.footer-logo-section a,
+.footer-logo-wrapper a {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+}
+
+.footer-logo-img {
+    height: 35px !important;
+    width: auto !important;
+}
+
+.footer-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    transition: color 0.3s ease !important;
+}
+
+.footer-link:hover {
+    color: #cc9933 !important;
+}
+
+.footer-separator {
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.footer-powered-by-line p {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 13px !important;
+    margin: 0 !important;
+}
+
+.powered-by-unregistry {
+    color: #cc9933 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+}
+
+.powered-by-unregistry:hover {
+    color: #ffffff !important;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+}
+
+.footer-copyright a {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: none !important;
+}
+
+.footer-copyright a:hover {
+    color: #cc9933 !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none !important;
+    }
+
+    .nav-toggle {
+        display: flex !important;
+    }
+
+    .footer-links {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .footer-separator {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   LOGIN FORM STYLING
+   ========================================================================== */
+.p_login_middle > div {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+    padding: 40px !important;
+}
+
+[data-theme="dark"] .p_login_middle > div {
+    background: rgba(30, 30, 30, 0.95) !important;
+    border: 1px solid rgba(204, 153, 51, 0.2) !important;
+}
+
+/* Form controls */
+.form-control {
+    width: 100% !important;
+    padding: 12px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+}
+
+.form-control:focus {
+    border-color: #cc9933 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(204, 153, 51, 0.1) !important;
+}
+
+/* Submit button */
+.btn-primary {
+    width: 100% !important;
+    padding: 12px !important;
+    background: linear-gradient(135deg, #997226, #cc9933) !important;
+    border: none !important;
+    border-radius: 6px !important;
+    color: white !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #cc9933, #ddaa44) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(204, 153, 51, 0.3) !important;
+}
