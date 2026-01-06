@@ -3,18 +3,23 @@
    ========================================================================== */
 
 /* Remove login top bar - SuiteCRM link */
-div.p_login > .p_login_top {
+.p_login_top {
+    display: none !important;
+}
+
+/* Remove login footer */
+.p_login_bottom {
     display: none !important;
 }
 
 /* Add www.onl branding to login */
-div.p_login {
+.p_login {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)) !important;
     min-height: 100vh;
 }
 
 /* Center login form with www.onl branding */
-div.p_login > .p_login_middle {
+.p_login_middle {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +28,7 @@ div.p_login > .p_login_middle {
 }
 
 /* Add www.onl logo before login form */
-div.p_login > .p_login_middle::before {
+.p_login_middle::before {
     content: '';
     display: block;
     width: 200px;
@@ -33,11 +38,6 @@ div.p_login > .p_login_middle::before {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-}
-
-/* Remove SuiteCRM branding from login footer */
-div.p_login > .p_login_bottom {
-    display: none !important;
 }
 
 /* Style login container */
@@ -69,4 +69,19 @@ input[type="text"], input[type="password"] {
 /* Style login title */
 .companylogo img {
     max-height: 60px !important;
+}
+
+/* Hide all remaining SuiteCRM branding */
+#admin_options, .companylogo {
+    display: none !important;
+}
+
+/* Ensure bottom elements are hidden */
+.p_login_bottom * {
+    display: none !important;
+}
+
+/* Override any inline styles */
+.p_login_bottom[style*="display"] {
+    display: none !important;
 }
