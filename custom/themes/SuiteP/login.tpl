@@ -224,8 +224,7 @@
     </div>
 </footer>
 
-<!-- www.onl JavaScript -->
-<script src="/js/main.js"></script>
+<!-- www.onl JavaScript - main.js removed (incompatible with login page) -->
 <script src="/agent/dashboard/custom/js/login-navigation.js"></script>
 
 {literal}
