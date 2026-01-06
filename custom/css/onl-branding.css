@@ -1,0 +1,443 @@
+/**
+ * www.onl Agent Portal - Custom Branding CSS
+ * Overrides SuiteCRM default styles with www.onl gold theme
+ */
+
+/* ==========================================================================
+   www.onl Brand Variables
+   ========================================================================== */
+:root {
+    --onl-gold-primary: #997226;
+    --onl-gold-secondary: #cc9933;
+    --onl-gold-accent: #b38829;
+    --onl-black: #000000;
+    --onl-text-dark: #ffffff;
+    --onl-text-light: #cccccc;
+    --onl-glass-bg: rgba(153, 114, 38, 0.1);
+    --onl-glass-border: rgba(204, 153, 51, 0.3);
+}
+
+/* ==========================================================================
+   Dark Mode Base (Default for www.onl)
+   ========================================================================== */
+body {
+    background-color: var(--onl-black) !important;
+    color: var(--onl-text-dark) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ==========================================================================
+   Button Styles - Gold Theme
+   ========================================================================== */
+.btn-primary,
+.btn-success,
+.btn-info {
+    background: linear-gradient(135deg, #997226, #cc9933) !important;
+    border-color: var(--onl-gold-primary) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-info:hover {
+    background: linear-gradient(135deg, #b38829, #ddb355) !important;
+    border-color: var(--onl-gold-accent) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(204, 153, 51, 0.4);
+}
+
+.btn-default {
+    background-color: rgba(153, 114, 38, 0.2) !important;
+    border-color: var(--onl-gold-primary) !important;
+    color: var(--onl-gold-secondary) !important;
+}
+
+/* ==========================================================================
+   Navigation - Gold Gradient
+   ========================================================================== */
+.navbar,
+.topnavbar,
+.navbar-inverse {
+    background: linear-gradient(135deg, #997226, #cc9933) !important;
+    border-bottom: 1px solid var(--onl-gold-accent) !important;
+}
+
+.navbar-brand,
+.navbar .navbar-brand {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Links - Gold Accent
+   ========================================================================== */
+a,
+.action-links a,
+.list tr td a {
+    color: var(--onl-gold-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+a:hover,
+.action-links a:hover {
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Glassmorphism Cards
+   ========================================================================== */
+.panel,
+.panel-default,
+.card,
+.well,
+.modal-content {
+    background: var(--onl-glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--onl-glass-border) !important;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.panel-heading,
+.card-header {
+    background: rgba(153, 114, 38, 0.2) !important;
+    border-bottom: 1px solid var(--onl-glass-border) !important;
+    color: var(--onl-gold-secondary) !important;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Tables - Dark Theme with Gold Accents
+   ========================================================================== */
+.table,
+.table-striped {
+    background: rgba(0, 0, 0, 0.3) !important;
+    color: var(--onl-text-dark) !important;
+}
+
+.table thead {
+    background: rgba(153, 114, 38, 0.3) !important;
+    border-bottom: 2px solid var(--onl-gold-primary);
+}
+
+.table thead th {
+    color: var(--onl-gold-secondary) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr:hover {
+    background: rgba(153, 114, 38, 0.15) !important;
+}
+
+/* ==========================================================================
+   Forms - Gold Accents
+   ========================================================================== */
+.form-control,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid var(--onl-gold-primary) !important;
+    color: var(--onl-text-dark) !important;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--onl-gold-secondary) !important;
+    box-shadow: 0 0 0 3px rgba(204, 153, 51, 0.2) !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+label,
+.control-label {
+    color: var(--onl-text-light) !important;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Dashboard Modules
+   ========================================================================== */
+.dashboard-module,
+.portlet {
+    background: var(--onl-glass-bg) !important;
+    border: 1px solid var(--onl-glass-border) !important;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.dashboard-module .portlet-header,
+.portlet-header {
+    background: linear-gradient(135deg, rgba(153, 114, 38, 0.3), rgba(204, 153, 51, 0.2)) !important;
+    border-bottom: 1px solid var(--onl-glass-border) !important;
+    color: var(--onl-gold-secondary) !important;
+}
+
+/* ==========================================================================
+   Side Panel / Detail View
+   ========================================================================== */
+.detail-view,
+.edit-view {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.detail-view .record-panel,
+.edit-view .edit-view-panel {
+    background: var(--onl-glass-bg) !important;
+    border: 1px solid var(--onl-glass-border) !important;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Breadcrumbs
+   ========================================================================== */
+.breadcrumb {
+    background: rgba(153, 114, 38, 0.15) !important;
+    border-radius: 8px;
+}
+
+.breadcrumb li a {
+    color: var(--onl-gold-secondary) !important;
+}
+
+.breadcrumb > .active {
+    color: var(--onl-text-light) !important;
+}
+
+/* ==========================================================================
+   Badges and Labels
+   ========================================================================== */
+.badge,
+.label {
+    background: var(--onl-gold-primary) !important;
+    color: #ffffff !important;
+}
+
+.badge-success,
+.label-success {
+    background: linear-gradient(135deg, #997226, #cc9933) !important;
+}
+
+/* ==========================================================================
+   Footer - www.onl Style
+   ========================================================================== */
+.footer,
+.footer .container-fluid {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-top: 1px solid var(--onl-glass-border) !important;
+    color: var(--onl-text-light) !important;
+}
+
+.footer a {
+    color: var(--onl-gold-secondary) !important;
+}
+
+/* ==========================================================================
+   Login Page
+   ========================================================================== */
+.login-body .login-screen,
+.login-body .login-logo {
+    background: var(--onl-glass-bg) !important;
+    border: 1px solid var(--onl-glass-border) !important;
+    backdrop-filter: blur(10px);
+}
+
+.login-body .login-footer {
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Smartwatch (248px - 383px) */
+@media (min-width: 248px) and (max-width: 383px) {
+    .panel, .card, .dashboard-module {
+        font-size: 12px;
+    }
+    .btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}
+
+/* Mobile (384px - 575px) */
+@media (min-width: 384px) and (max-width: 575px) {
+    .navbar .navbar-brand {
+        font-size: 16px;
+    }
+    .dashboard-module .portlet-header {
+        font-size: 14px;
+    }
+}
+
+/* Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .sidebar {
+        width: 200px;
+    }
+}
+
+/* Desktop (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container-fluid {
+        max-width: 970px;
+    }
+}
+
+/* Large Desktop (1200px - 1535px) */
+@media (min-width: 1200px) and (max-width: 1535px) {
+    .container-fluid {
+        max-width: 1140px;
+    }
+}
+
+/* HD Monitor (1536px - 2559px) */
+@media (min-width: 1536px) and (max-width: 2559px) {
+    .container-fluid {
+        max-width: 1400px;
+    }
+}
+
+/* 4K TV (2560px+) */
+@media (min-width: 2560px) {
+    .container-fluid {
+        max-width: 1920px;
+    }
+    .dashboard-module {
+        min-height: 400px;
+    }
+}
+
+/* ==========================================================================
+   Footer - www.onl Style
+   ========================================================================== */
+/* Wrapper to match main content area width */
+.onl-footer .wrapper-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.onl-footer,
+footer {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-top: 1px solid var(--onl-gold-primary) !important;
+    padding: 30px 0;
+    margin: 50px auto 0 auto !important;
+    color: var(--onl-text-light) !important;
+    /* Fix overflow issues */
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+/* Ensure container-fluid is properly contained */
+.onl-footer .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/* Fix Bootstrap row margin issues */
+.onl-footer .row {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+
+/* Ensure columns don't overflow */
+.onl-footer .col-md-8,
+.onl-footer .col-md-4,
+.onl-footer .col-md-12 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    position: relative !important;
+}
+
+.onl-footer .footer-links a {
+    color: var(--onl-gold-secondary) !important;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.onl-footer .footer-links a:hover {
+    color: #ffffff !important;
+}
+
+.onl-footer .footer-separator {
+    color: var(--onl-gold-primary);
+    margin: 0 5px;
+}
+
+.onl-footer .footer-copyright {
+    color: var(--onl-text-light) !important;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.onl-footer .footer-copyright a {
+    color: var(--onl-gold-secondary) !important;
+    text-decoration: none;
+}
+
+.onl-footer .footer-powered-by {
+    font-size: 13px;
+    color: var(--onl-text-light);
+}
+
+.onl-footer .powered-by-unregistry {
+    color: var(--onl-gold-accent) !important;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.onl-footer .back-to-top {
+    color: var(--onl-gold-secondary) !important;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.onl-footer .back-to-top:hover {
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+.onl-gold-text {
+    color: var(--onl-gold-secondary) !important;
+}
+
+.onl-gold-bg {
+    background: linear-gradient(135deg, #997226, #cc9933) !important;
+}
+
+.onl-glass {
+    background: var(--onl-glass-bg) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--onl-glass-border) !important;
+    border-radius: 12px;
+}

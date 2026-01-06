@@ -1,0 +1,131 @@
+/**
+ * Theme Toggle Button Styles
+ * www.onl Branding - Gold Accent Theme
+ */
+
+/* ==========================================================================
+   Theme Toggle Container
+   ========================================================================== */
+.onl-theme-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+}
+
+/* ==========================================================================
+   Theme Toggle Button
+   ========================================================================== */
+.onl-theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #997226, #cc9933);
+    border: 2px solid #b38829;
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(153, 114, 38, 0.3);
+}
+
+.onl-theme-toggle-btn:hover {
+    background: linear-gradient(135deg, #b38829, #ddb355);
+    border-color: #cc9933;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(204, 153, 51, 0.5);
+}
+
+.onl-theme-toggle-btn:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.onl-theme-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.onl-theme-toggle-btn.loading {
+    opacity: 0.7;
+    cursor: wait;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Theme Icons
+   ========================================================================== */
+.onl-theme-toggle-btn svg {
+    display: block;
+}
+
+/* ==========================================================================
+   Mobile Responsive Design
+   ========================================================================== */
+
+/* Smartwatch */
+@media (max-width: 383.98px) {
+    .onl-theme-toggle-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .onl-theme-toggle-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Mobile */
+@media (min-width: 384px) and (max-width: 575.98px) {
+    .onl-theme-toggle-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .onl-theme-toggle-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+    .onl-theme-toggle-container {
+        margin-bottom: 15px;
+    }
+
+    .onl-theme-toggle-btn:hover {
+        transform: scale(1.15);
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+.onl-theme-toggle-btn:focus-visible {
+    outline: 3px solid #cc9933;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .onl-theme-toggle-btn,
+    .onl-theme-toggle-btn svg {
+        transition: none;
+    }
+
+    .onl-theme-toggle-btn:hover {
+        transform: none;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+@media print {
+    .onl-theme-toggle-container {
+        display: none;
+    }
+}

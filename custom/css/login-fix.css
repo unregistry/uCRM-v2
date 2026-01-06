@@ -1,0 +1,15 @@
+/* www.onl: Login page styling fixes */
+
+/* Hide default SuiteCRM login elements */
+#loginbox {
+    display: none !important;
+}
+
+#loginform {
+    display: none !important;
+}
+
+/* Ensure www.onl login wrapper is visible */
+.onl-login-wrapper {
+    display: block !important;
+}
