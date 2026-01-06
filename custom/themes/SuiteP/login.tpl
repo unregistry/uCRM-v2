@@ -3,11 +3,13 @@
  * www.onl Agent Dashboard Login Page
  * Full www.onl website integration with SuiteCRM login form
  */}
+{literal}
 <script type='text/javascript'>
-    var LBL_LOGIN_SUBMIT = '{sugar_translate module="Users" label="LBL_LOGIN_SUBMIT"}';
-    var LBL_REQUEST_SUBMIT = '{sugar_translate module="Users" label="LBL_REQUEST_SUBMIT"}';
-    var LBL_SHOWOPTIONS = '{sugar_translate module="Users" label="LBL_SHOWOPTIONS"}';
-    var LBL_HIDEOPTIONS = '{sugar_translate module="Users" label="LBL_HIDEOPTIONS"}';
+    var LBL_LOGIN_SUBMIT = '{/literal}{sugar_translate module="Users" label="LBL_LOGIN_SUBMIT"}{literal}';
+    var LBL_REQUEST_SUBMIT = '{/literal}{sugar_translate module="Users" label="LBL_REQUEST_SUBMIT"}{literal}';
+    var LBL_SHOWOPTIONS = '{/literal}{sugar_translate module="Users" label="LBL_SHOWOPTIONS"}{literal}';
+    var LBL_HIDEOPTIONS = '{/literal}{sugar_translate module="Users" label="LBL_HIDEOPTIONS"}{literal}';
+{/literal}
 </script>
 
 <!-- www.onl CSS -->
@@ -226,9 +228,11 @@
 <script src="/js/main.js"></script>
 <script src="/agent/dashboard/custom/js/login-navigation.js"></script>
 
+{literal}
 <style>
 /* Hide SuiteCRM branding on login page */
 .p_login_top { display: none !important; }
 .p_login_bottom { display: none !important; }
 .p_login { background: transparent !important; }
 </style>
+{/literal}
