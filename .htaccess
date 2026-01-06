@@ -34,10 +34,7 @@ RedirectMatch 403 (?i)/+files\.md5$
     # STEP 1: Redirect ugly URLs to clean URLs (must come before rewrite rules)
     # -------------------------------------------------------------------------
 
-    # Redirect ugly login URL to root
-    RewriteCond %{THE_REQUEST} \s/agent/dashboard/index.php\?module=Users&action=Login [NC]
-    RewriteRule ^ /agent/dashboard/? [R=301,L]
-
+    # NOTE: Login URL stays as-is - the root /agent/dashboard/ naturally shows login
     # NOTE: Logout action must execute to destroy session, so don't redirect it
     # SuiteCRM's Logout.php handles the redirect after logout
 
